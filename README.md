@@ -175,7 +175,7 @@ class Department:
             CREATE TABLE IF NOT EXISTS departments (
             id INTEGER PRIMARY KEY,
             name TEXT,
-            location TEXT)
+            location TEXT);
         """
         CURSOR.execute(sql)
         CONN.commit()
@@ -343,7 +343,7 @@ class Department:
         """
         sql = """
             INSERT INTO departments (name, location)
-            VALUES (?, ?)
+            VALUES (?, ?);
         """
 
         CURSOR.execute(sql, (self.name, self.location))
@@ -531,7 +531,7 @@ associated an object that is an instance of the `Department` class:
         sql = """
             UPDATE departments
             SET name = ?, location = ?
-            WHERE id = ?
+            WHERE id = ?;
         """
         CURSOR.execute(sql, (self.name, self.location, self.id))
         CONN.commit()
@@ -540,7 +540,7 @@ associated an object that is an instance of the `Department` class:
         """Delete the table row corresponding to the current Department instance"""
         sql = """
             DELETE FROM departments
-            WHERE id = ?
+            WHERE id = ?;
         """
 
         CURSOR.execute(sql, (self.id,))
